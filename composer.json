@@ -1,0 +1,50 @@
+{
+  "name": "effsoft/eff-module-verify",
+  "description": "",
+  "keywords": ["effsoft","eff-module-verify"],
+  "homepage": "https://github.com/effsoft/eff-module-verify",
+  "type": "eff-module",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.2.0",
+    "yiisoft/yii2": "~2.0.14",
+    "marc-mabe/php-enum": "v2.3.2",
+    "ircmaxell/random-lib": "~1.2.0",
+    "effsoft/eff": "dev-master"
+
+  },
+  "require-dev": {
+
+  },
+  "config": {
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false
+    }
+  },
+  "autoload" : {
+    "psr-4" : {
+      "effsoft\\eff\\module\\verify\\" : "src/"
+    }
+  },
+  "autoload-dev" : {
+    "psr-4" : {
+      "effsoft\\eff\\module\\verify\\" : "src/"
+    }
+  },
+  "repositories": {
+    "eff":{
+      "type": "path",
+      "url": "../eff"
+    },
+    "asset-packagist":{
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    },
+    "packagist":{
+      "type": "composer",
+      "url": "https://packagist.org"
+    }
+  }
+}
