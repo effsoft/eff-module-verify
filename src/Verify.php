@@ -101,13 +101,14 @@ class Verify{
                 'verify_code' => $this->code,
                 'verify_url' =>  $this->verify_url,
             ]);
-            $register_email
-                ->setFrom($this->from)
-                ->setTo($this->to)
-                ->setSubject($this->subject);
-            if (!@$register_email->send()){
-                return false;
-            }
+            //TODO: for test
+//            $register_email
+//                ->setFrom($this->from)
+//                ->setTo($this->to)
+//                ->setSubject($this->subject);
+//            if (!@$register_email->send()){
+//                return false;
+//            }
             $this->sent = true;
         }
 
