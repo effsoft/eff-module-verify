@@ -83,7 +83,10 @@ class Verify{
         $verify_model = new VerifyModel();
         $verify_model->type = intval($this->type);
         $verify_model->protocol = intval($this->protocol);
+        $verify_model->from = $this->from;
         $verify_model->to = $this->to;
+        $verify_model->url = $this->url;
+        $verify_model->subject = $this->subject;
         $verify_model->token = $this->token;
         $verify_model->code = $this->code;
         $verify_model->data = $this->data;
@@ -137,7 +140,10 @@ class Verify{
             }
 
             return $verify_model->data;
+        }else{
+            $this->error = 'Invalid verify code!';
+            return false;
         }
-        return false;
+
     }
 }

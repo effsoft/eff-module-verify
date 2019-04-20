@@ -13,7 +13,7 @@ class VerifyModel extends ActiveRecord {
 
     public function attributes()
     {
-        return ['_id', 'type', 'protocol', 'to', 'token', 'code', 'data', 'date_created'];
+        return ['_id', 'type', 'protocol','from', 'to', 'url', 'subject', 'view', 'token', 'code', 'data', 'date_created'];
     }
 
     public function beforeSave($insert)
