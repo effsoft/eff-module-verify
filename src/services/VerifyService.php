@@ -1,13 +1,12 @@
 <?php
-
-namespace effsoft\eff\module\verify;
+namespace effsoft\eff\module\verify\services;
 
 use effsoft\eff\module\verify\enums\Protocol;
 use effsoft\eff\module\verify\enums\Type;
 use effsoft\eff\module\verify\models\VerifyModel;
 use yii\helpers\Url;
 
-class Verify{
+class VerifyService{
 
     private $type = false;
     private $protocol = false;
@@ -130,7 +129,7 @@ class Verify{
             return false;
         }
         if ($verify_model->isExpired()){
-            $this->error = 'The verify code was expired!';
+            $this->error = 'The verify code was expired, please re-send your verify code!';
             return false;
         }
         if ($verify_model->code === $code){

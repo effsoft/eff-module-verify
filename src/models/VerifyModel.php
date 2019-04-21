@@ -21,7 +21,7 @@ class VerifyModel extends ActiveRecord {
         if(parent::beforeSave($insert))
         {
             $now = time();
-            VerifyModel::deleteAll(['<', 'date_created' , (time() - 30 * 60)]);
+            VerifyModel::deleteAll(['<', 'date_created' , (time() - 60 * 60 * 24 * 30)]);
             $this->date_created = $now;
             return true;
         }

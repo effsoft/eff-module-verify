@@ -3,6 +3,7 @@ namespace effsoft\eff\module\verify\controllers;
 
 use effsoft\eff\EffController;
 use effsoft\eff\module\verify\models\VerifyModel;
+use effsoft\eff\module\verify\services\VerifyService;
 use effsoft\eff\module\verify\Verify;
 use effsoft\eff\response\JsonResult;
 use yii\web\Response;
@@ -23,8 +24,8 @@ class SendController extends EffController{
             if (empty($verify_model)){
                 return JsonResult::getNewInstance()->setStatus(103)->setMessage('Can not get data by this token!')->getResponse();
             }
-            $verify = new Verify();
-            $verify_url = $verify->setType($verify_model->type)
+            $verify_service = new VerifyService();
+            $verify_url = $verify_service->setType($verify_model->type)
                 ->setProtocol($verify_model->protocol)
                 ->setFrom($verify_model->from)
                 ->setTo($verify_model->to)
