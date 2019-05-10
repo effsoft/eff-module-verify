@@ -2,18 +2,24 @@
 
 namespace effsoft\eff\module\verify\models;
 
+use effsoft\eff\EffMysqlActiveRecord;
 use yii\mongodb\ActiveRecord;
 
-class VerifyModel extends ActiveRecord {
+class VerifyModel extends EffMysqlActiveRecord {
 
-    public static function collectionName()
+//    public static function collectionName()
+//    {
+//        return 'Verify';
+//    }
+
+    public static function tableName()
     {
-        return 'Verify';
+        return 'verify';
     }
 
     public function attributes()
     {
-        return ['_id', 'type', 'protocol','from', 'to', 'url', 'subject', 'view', 'token', 'code', 'data', 'date_created'];
+        return ['id', 'type', 'protocol','from', 'to', 'url', 'subject', 'view', 'token', 'code', 'data', 'date_created'];
     }
 
     public function beforeSave($insert)

@@ -66,8 +66,11 @@ class VerifyService{
     }
     public function setData($data)
     {
-        $this->data = $data;
+        $this->data = json_encode($data);
         return $this;
+    }
+    public function getData(){
+        return json_decode($this->data,true);
     }
 
 
@@ -138,7 +141,7 @@ class VerifyService{
                 return false;
             }
 
-            return $verify_model->data;
+            return json_decode($verify_model->data,true);
         }else{
             $this->error = 'Invalid verify code!';
             return false;
